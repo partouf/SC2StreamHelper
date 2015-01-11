@@ -111,7 +111,10 @@ namespace SC2StreamHelper
                 input.Send_CtrlShiftKeyPress((byte)'S');
 
                 // set best of...
-                input.Send_CtrlShiftKeyPress((short)(0x30 + cbBestOf.SelectedIndex + 1));
+                //if (cbBestOf.SelectedIndex == 1) input.Send_CtrlShiftKeyPress((short)(0x30 + 3)); // setting bo3 not needed
+                if (cbBestOf.SelectedIndex == 2) input.Send_CtrlShiftKeyPress((short)(0x30 + 5));
+                if (cbBestOf.SelectedIndex == 3) input.Send_CtrlShiftKeyPress((short)(0x30 + 7));
+                if (cbBestOf.SelectedIndex == 4) input.Send_CtrlShiftKeyPress((short)(0x30 + 9));
             }
 
             // swap player positions
@@ -119,32 +122,68 @@ namespace SC2StreamHelper
             {
                 input.Send_CtrlKeyPress((byte)'X');
 
-                // note: players are swapped, add scores reversed
-
-                // 1st player
-                if (cbPlayer2Score.SelectedIndex > 0)
+                if (!chkDifferentInitialOrder.IsChecked.GetValueOrDefault(false))
                 {
-                    input.Send_ShiftKeyPress((short)(0x30 + cbPlayer2Score.SelectedIndex));
+                    // players are swapped, add scores reversed
+
+                    // 1st player
+                    if (cbPlayer2Score.SelectedIndex > 0)
+                    {
+                        input.Send_ShiftKeyPress((short)(0x30 + cbPlayer2Score.SelectedIndex));
+                    }
+
+                    // 2nd player
+                    if (cbPlayer1Score.SelectedIndex > 0)
+                    {
+                        input.Send_CtrlKeyPress((short)(0x30 + cbPlayer1Score.SelectedIndex));
+                    }
                 }
-
-                // 2nd player
-                if (cbPlayer1Score.SelectedIndex > 0)
+                else
                 {
-                    input.Send_CtrlKeyPress((short)(0x30 + cbPlayer1Score.SelectedIndex));
+                    // but if the initial order was already reversed what was entered into this application, we do it the other way around
+
+                    // 1st player
+                    if (cbPlayer1Score.SelectedIndex > 0)
+                    {
+                        input.Send_ShiftKeyPress((short)(0x30 + cbPlayer1Score.SelectedIndex));
+                    }
+
+                    // 2nd player
+                    if (cbPlayer2Score.SelectedIndex > 0)
+                    {
+                        input.Send_CtrlKeyPress((short)(0x30 + cbPlayer2Score.SelectedIndex));
+                    }
                 }
             }
             else
             {
-                // 1st player
-                if (cbPlayer1Score.SelectedIndex > 0)
+                if (!chkDifferentInitialOrder.IsChecked.GetValueOrDefault(false))
                 {
-                    input.Send_ShiftKeyPress((short)(0x30 + cbPlayer1Score.SelectedIndex));
-                }
+                    // 1st player
+                    if (cbPlayer1Score.SelectedIndex > 0)
+                    {
+                        input.Send_ShiftKeyPress((short)(0x30 + cbPlayer1Score.SelectedIndex));
+                    }
 
-                // 2nd player
-                if (cbPlayer2Score.SelectedIndex > 0)
+                    // 2nd player
+                    if (cbPlayer2Score.SelectedIndex > 0)
+                    {
+                        input.Send_CtrlKeyPress((short)(0x30 + cbPlayer2Score.SelectedIndex));
+                    }
+                }
+                else
                 {
-                    input.Send_CtrlKeyPress((short)(0x30 + cbPlayer2Score.SelectedIndex));
+                    // 1st player
+                    if (cbPlayer2Score.SelectedIndex > 0)
+                    {
+                        input.Send_ShiftKeyPress((short)(0x30 + cbPlayer2Score.SelectedIndex));
+                    }
+
+                    // 2nd player
+                    if (cbPlayer1Score.SelectedIndex > 0)
+                    {
+                        input.Send_CtrlKeyPress((short)(0x30 + cbPlayer1Score.SelectedIndex));
+                    }
                 }
             }
 

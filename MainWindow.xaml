@@ -1,28 +1,28 @@
 ﻿<Window x:Name="frmSC2StreamHelperMain" x:Class="SC2StreamHelper.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SC2 Stream Helper" Height="230" Width="609" ResizeMode="NoResize">
+        Title="SC2 Stream Helper" Height="235" Width="727" ResizeMode="NoResize">
     <Grid Margin="0,0,0,10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="109*"/>
             <ColumnDefinition Width="408*"/>
         </Grid.ColumnDefinitions>
-        <GroupBox x:Name="grpPlayers" Header="Series" HorizontalAlignment="Left" Margin="10,23,0,0" Width="581" Grid.ColumnSpan="2">
-            <Grid>
+        <GroupBox x:Name="grpPlayers" Header="Series" HorizontalAlignment="Left" Margin="12,13,0,10" Width="694" Grid.ColumnSpan="2">
+            <Grid Margin="0,0,-12,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btnSendToGameHeart" Content="Send to GameHeart" HorizontalAlignment="Left" Margin="408,55,0,0" VerticalAlignment="Top" Width="137" Click="btnSendToGameHeart_Click" Height="44" Grid.Column="1"/>
-                <TextBox x:Name="edPlayer1" HorizontalAlignment="Left" Height="23" Margin="94,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" Grid.Column="1"/>
-                <TextBox x:Name="edPlayer2" HorizontalAlignment="Left" Height="23" Margin="94,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" Grid.Column="1"/>
-                <ComboBox x:Name="cbPlayer1Score" HorizontalAlignment="Left" Margin="295,17,0,0" VerticalAlignment="Top" Width="84" Grid.Column="1" Height="22"/>
-                <ComboBox x:Name="cbPlayer2Score" HorizontalAlignment="Left" Margin="295,105,0,0" VerticalAlignment="Top" Width="84" Grid.Column="1" Height="22"/>
-                <CheckBox x:Name="chkDifferentSpawns" Grid.ColumnSpan="2" Content="Ingame swap needed" HorizontalAlignment="Left" Margin="408,35,0,0" VerticalAlignment="Top"/>
-                <Label Grid.ColumnSpan="2" Content="Please add players in this order to lobby" HorizontalAlignment="Left" Margin="157,55,0,0" VerticalAlignment="Top" IsEnabled="False"/>
-                <Label Grid.ColumnSpan="2" Content="Player 1" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top"/>
-                <Label Grid.ColumnSpan="2" Content="Player 2" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="cbBestOf" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Width="68"/>
+                <Button x:Name="btnSendToGameHeart" Content="Send to GameHeart" HorizontalAlignment="Left" Margin="523,58,0,0" VerticalAlignment="Top" Width="137" Click="btnSendToGameHeart_Click" Height="44" Grid.Column="1" TabIndex="7"/>
+                <TextBox x:Name="edPlayer1" HorizontalAlignment="Left" Height="23" Margin="202,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" Grid.Column="1" TabIndex="1"/>
+                <TextBox x:Name="edPlayer2" HorizontalAlignment="Left" Height="23" Margin="202,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" Grid.Column="1" TabIndex="2"/>
+                <ComboBox x:Name="cbPlayer1Score" HorizontalAlignment="Left" Margin="403,38,0,0" VerticalAlignment="Top" Width="84" Grid.Column="1" Height="22" TabIndex="3"/>
+                <ComboBox x:Name="cbPlayer2Score" HorizontalAlignment="Left" Margin="403,75,0,0" VerticalAlignment="Top" Width="84" Grid.Column="1" Height="23" TabIndex="4"/>
+                <CheckBox x:Name="chkDifferentSpawns" Grid.ColumnSpan="2" Content="Swap spawns" HorizontalAlignment="Left" Margin="523,38,0,0" VerticalAlignment="Top" TabIndex="6"/>
+                <Label Grid.ColumnSpan="2" Content="Player 1" HorizontalAlignment="Left" Margin="118,34,0,0" VerticalAlignment="Top"/>
+                <Label Grid.ColumnSpan="2" Content="Player 2" HorizontalAlignment="Left" Margin="118,71,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cbBestOf" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="20,58,0,0" VerticalAlignment="Top" Width="68" TabIndex="0"/>
+                <CheckBox x:Name="chkDifferentInitialOrder" Grid.ColumnSpan="2" Content="Playernames appeared the other way around ingame" HorizontalAlignment="Left" Margin="128,112,0,0" VerticalAlignment="Top" TabIndex="5"/>
             </Grid>
         </GroupBox>
 
